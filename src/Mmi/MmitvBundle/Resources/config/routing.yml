@@ -1,0 +1,3 @@
+mmi_mmitv_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MmiMmitvBundle:Default:index }

@@ -1,3 +1,7 @@
+mmi_mmitv:
+    resource: "@MmiMmitvBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
