@@ -1,17 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: evergreen
- * Date: 23/03/15
- * Time: 14:39
- */
+
 
 namespace Mmi\MmitvBundle\Controller;
 
-use QD\BackBundle\Entity\User;
+use Mmi\MmitvBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class QDRoleController extends Controller
+class MmiRoleController extends Controller
 {
 
     public function RoleAdmin()

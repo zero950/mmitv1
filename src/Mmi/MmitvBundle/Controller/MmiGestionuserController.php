@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: evergreen
- * Date: 27/02/15
- * Time: 21:18
- */
-
 
 namespace Mmi\MmitvBundle\Controller;
 
