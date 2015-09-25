@@ -1,0 +1,36 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-2">
+            <div class="form-group">
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+                <div class="form-group">
+                    {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control', 'placeholder': 'Nouveau mot de passe'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control', 'placeholder': 'Vérification du mot de passe'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_widget(form.current_password, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre mot de passe actuel'}}) }}
+                </div>
+            </div>
+
+            {{ form_widget(form.Envoyer, {'attr': {'class': 'btn primary-btn'}}) }}
+            {{ form_end(form) }}
+        </div>
+
+    </div>
+</form>

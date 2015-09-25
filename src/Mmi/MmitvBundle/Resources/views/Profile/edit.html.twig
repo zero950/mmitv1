@@ -1,0 +1,8 @@
+{% extends "MmiMmitvBundle::layoutMmiMmitvBundle.html.twig" %}
+
+{% block container %}
+    {{ parent() }}
+{% block fos_user_content %}
+    {% include "MmiMmitvBundle:Profile:edit_content.html.twig" %}
+{% endblock fos_user_content %}
+{% endblock %}

@@ -1,13 +1,55 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}42 {% endblock %}</title>
+
+
+    {% block stylesheets %}
+
+        {% stylesheets
+
+        "bundles/mmimmitv/css/bootstrap.css"
+        "bundles/mmimmitv/css/bootstrap-theme.css"
+        "bundles/mmimmitv/css/ie.css"
+        "bundles/mmimmitv/css/print.css"
+        "bundles/mmimmitv/css/screen.css"
+        "bundles/mmimmitv/css/screen_save.css"
+
+
+        filter="cssrewrite" %}
+
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+
+        {% endstylesheets %}
+    {% endblock %}
+
+
+    {% block javascripts %}
+
+        <script type="text/javascript" src="{{ asset('bundles/mmimmitv/js/jquery-2.1.0.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/mmimmitv/js/bootstrap.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/mmimmitv/js/jquery.tubular.1.0.js') }}"></script>
+
+    {% endblock %}
+
+
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('bundles/mmimmitv/images/favicon.ico') }}" />
+</head>
+
+
+<body>
+{% block body %}
+
+
+    {% block fos_user_content %}
+
+    {% endblock fos_user_content %}
+
+{% endblock %}
+
+
+</body>
+
 </html>

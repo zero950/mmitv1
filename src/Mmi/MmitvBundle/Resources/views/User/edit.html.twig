@@ -1,0 +1,53 @@
+{% extends "MmiMmitvBundle::layoutMmiMmitvBundle.html.twig" %}
+
+{% block container %}
+    {{ parent() }}
+
+    <h1>Edition de l'utilisateur : {{ entity.username }}</h1>
+<div class="row">
+        <div class="col-md-4 col-md-offset-2">
+            <div class="form-group">
+                {{ form_start(edit_form) }}
+                {{ form_errors(edit_form) }}
+                <div class="form-group">
+                    {{ form_widget(edit_form.username, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_widget(edit_form.email, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_widget(edit_form.Role, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="row">
+                    <div class='col-md-8'>
+                        {{ form_widget(edit_form.expiresAt, {'attr': {'id':'datetimepicker4'}}) }}
+                    </div>
+                    {#<script type="text/javascript">#}
+                        {#$(function () {#}
+                            {#$('#datetimepicker4').datetimepicker();#}
+                        {#});#}
+                    {#</script>#}
+                </div>
+            </div>
+
+
+
+
+
+            {{ form_widget(edit_form.submit, {'attr': {'class': 'btn primary-btn'}}) }}
+            {{ form_end(edit_form) }}
+        </div>
+
+
+    <div class="col-md-4">
+        <div class="list-group">
+            <a href="{{ path('user') }}" class="list-group-item ">Retour à la liste des utilisateurs</a>
+            <a href="{{ path("user_delete", {'id': entity.id}) }}" class="list-group-item list-group-item-danger">Supprimer
+                l'utilisateur</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

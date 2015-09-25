@@ -1,0 +1,24 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+<div class="fos_user_user_show ">
+
+    <ul class="list-group col-md-4 col-md-offset-2">
+        <li class="list-group-item">{{ 'profile.show.username'|trans }}: {{ user.username }}</li>
+        <li class="list-group-item">{{ 'profile.show.email'|trans }}: {{ user.email }}</li>
+        <li class="list-group-item">Ce compte expire le : {{ user.expiresAt|date('d/m/Y') }}</li>
+        <li class="list-group-item">
+            Role :  {% for role in user.roles %}
+                        {{ role [5:]~" - " }}
+                    {% endfor %}
+
+        </li>
+    </ul>
+
+    <div class="list-group col-md-4">
+        <a href="{{ path("mmi_mmitv_admin") }}" class="list-group-item ">Retour</a>
+        <a href="{{ path('mmi_mmitv_edit_profil') }}" class="list-group-item list-group-item-warning">Modifier le profil</a>
+    </div>
+
+</div>
+

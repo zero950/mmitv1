@@ -10,7 +10,7 @@ parameters:
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator: ~
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -78,3 +78,14 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+fos_user:
+    db_driver:      orm                         #Ici doctrine
+    firewall_name:  main                        #Nom du firewall derri?re lequel on utilise les utilisateurs
+    user_class:     Mmi\MmitvBundle\Entity\User    #La Class de l'entity user
+    registration:
+        form:
+            type: mmi_mmitv_registration
+    profile:
+        form:
+            type: mmi_mmitv_profil

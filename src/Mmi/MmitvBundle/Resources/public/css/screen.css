@@ -1,0 +1,324 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* fonts */
+/*@include font-face("Gotham Bold", font-files("../fonts/gotham_bold.woff", "../fonts/gotham_bold.ttf", "../fonts/gotham_bold.svg"), "../fonts/gotham_bold.eot");*/
+@font-face {
+  font-family: "Gotham Bold";
+  src: url("../fonts/gotham_bold.ttf");
+}
+/* shared */
+/* line 19, ../sass/screen.scss */
+.text-align-center {
+  text-align: center;
+}
+
+/* line 20, ../sass/screen.scss */
+body {
+  font-family: "Gotham Bold";
+}
+
+/* line 21, ../sass/screen.scss */
+.border-radius {
+  -moz-border-radius: 4px / 4px;
+  -webkit-border-radius: 4px 4px;
+  border-radius: 4px / 4px;
+}
+
+/* texts */
+/* line 24, ../sass/screen.scss */
+h1 {
+  text-align: center;
+  font-size: 20pt;
+  margin: 0.5em;
+}
+
+/* containers */
+/* line 28, ../sass/screen.scss */
+.container {
+  padding: 3%;
+  padding-top: 5%;
+}
+/* line 29, ../sass/screen.scss */
+.container form {
+  margin-top: 8%;
+}
+/* line 30, ../sass/screen.scss */
+.container form div {
+  height: 50px;
+}
+
+/* OTHER */
+/* TV */
+/* line 38, ../sass/screen.scss */
+.tv {
+  width: 100%;
+  heigth: 100%;
+}
+
+/* line 43, ../sass/screen.scss */
+.vidtv {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -100;
+  /*background: url(polina.jpg) no-repeat;*/
+  background-size: cover;
+  overflow: hide;
+}
+
+/* line 52, ../sass/screen.scss */
+.vidWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+/* line 58, ../sass/screen.scss */
+.vidWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 66, ../sass/screen.scss */
+.logo {
+  position: fixed;
+  top: 15px;
+  right: 35px;
+  width: 60px;
+  float: right;
+}
+
+/* CONNEXION */
+/* line 80, ../sass/screen.scss */
+.connexion {
+  padding: 0;
+  padding-top: 10%;
+}
+/* line 84, ../sass/screen.scss */
+.connexion h1 {
+  position: relative;
+  font-size: 25pt;
+  margin-left: -50%;
+}
+
+/* BACK-OFFICE CONNECTE */
+/* MENU DEROULANT VIDEOS */
+/* line 92, ../sass/screen.scss */
+#accordian {
+  background: #e6e6e6;
+  width: 250px;
+  margin: 100px auto 0 auto;
+  color: #a4a4a4;
+  /*Some cool shadow and glow effect*/
+  box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.6), 0 0 200px 1px rgba(255, 255, 255, 0.5);
+}
+
+/*heading styles*/
+/* line 103, ../sass/screen.scss */
+#accordian h3 {
+  font-size: 12px;
+  line-height: 34px;
+  padding: 0 10px;
+  cursor: pointer;
+  /*fallback for browsers not supporting gradients*/
+  background: #e6e6e6;
+  background: linear-gradient(#e6e6e6, #e6e6e6);
+}
+
+/*heading hover effect*/
+/* line 113, ../sass/screen.scss */
+#accordian h3:hover {
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+/*iconfont styles*/
+/* line 117, ../sass/screen.scss */
+#accordian h3 span {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/*list items*/
+/* line 122, ../sass/screen.scss */
+#accordian li {
+  list-style-type: none;
+}
+
+/*links*/
+/* line 126, ../sass/screen.scss */
+#accordian ul ul li a {
+  color: #a4a4a4;
+  text-decoration: none;
+  font-size: 11px;
+  line-height: 27px;
+  display: block;
+  padding: 0 15px;
+  /*transition for smooth hover animation*/
+  transition: all 0.15s;
+}
+
+/*hover effect on links*/
+/* line 137, ../sass/screen.scss */
+#accordian ul ul li a:hover {
+  background: #003545;
+  border-left: 5px solid lightgreen;
+}
+
+/*Lets hide the non active LIs by default*/
+/* line 142, ../sass/screen.scss */
+#accordian ul ul {
+  display: none;
+}
+
+/* line 145, ../sass/screen.scss */
+#accordian li.active ul {
+  display: block;
+}
+
+/* ASIDE PLAYLISTS */
+/* line 151, ../sass/screen.scss */
+#accordian2 {
+  background: #e6e6e6;
+  width: 250px;
+  margin: 100px auto 0 auto;
+  color: #c0c0c0;
+  /*Some cool shadow and glow effect*/
+  box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.6), 0 0 200px 1px rgba(255, 255, 255, 0.5);
+}
+
+/*heading styles*/
+/* line 162, ../sass/screen.scss */
+#accordian2 h3 {
+  font-size: 12px;
+  line-height: 34px;
+  padding: 0 10px;
+  cursor: pointer;
+  color: white;
+  /*fallback for browsers not supporting gradients*/
+  background: #d9d9d9;
+  background: linear-gradient(#d9d9d9, #d9d9d9);
+}
+
+/*heading hover effect*/
+/* line 173, ../sass/screen.scss */
+#accordian2 h3:hover {
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+/*iconfont styles*/
+/* line 177, ../sass/screen.scss */
+#accordian2 h3 span {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/*list items*/
+/* line 182, ../sass/screen.scss */
+#accordian2 li {
+  list-style-type: none;
+}
+
+/*links*/
+/* line 186, ../sass/screen.scss */
+#accordian2 ul ul li a {
+  color: #c0c0c0;
+  text-decoration: none;
+  font-size: 11px;
+  line-height: 27px;
+  display: block;
+  padding: 0 15px;
+  /*transition for smooth hover animation*/
+  transition: all 0.15s;
+}
+
+/*hover effect on links*/
+/* line 197, ../sass/screen.scss */
+#accordian2 ul ul li a:hover {
+  background: #003545;
+  border-left: 5px solid lightgreen;
+}
+
+/*Lets hide the non active LIs by default*/
+/* line 202, ../sass/screen.scss */
+#accordian2 ul ul {
+  display: none;
+}
+
+/* line 205, ../sass/screen.scss */
+#accordian2 li.active ul {
+  display: block;
+}

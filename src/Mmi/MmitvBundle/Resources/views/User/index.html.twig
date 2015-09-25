@@ -1,0 +1,49 @@
+{% extends "MmiMmitvBundle::layoutMmiMmitvBundle.html.twig" %}
+
+{% block container %}
+
+    {{ parent() }}
+
+    <h1>Liste des Utilisateurs</h1>
+
+    <div class="container">
+        <table class="table col-md-8">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Email</th>
+                {#<th>Role</th>#}
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td>{{ entity.id }}</a></td>
+                    <td>{{ entity.username }}</td>
+                    <td>{{ entity.email }}</td>
+                    {#<td>#}
+                        {#{% for role in entity.roles %}#}
+                            {#{{ role [5:] }}#}
+                        {#{% endfor %}#}
+                    {#</td>#}
+                    <td>
+
+                        <a href="{{ path('user_show', { 'id': entity.id }) }}">
+                            <button type="button" class="btn btn-primary">Afficher</button>
+                        </a>
+
+                        <a href="{{ path('user_edit', { 'id': entity.id }) }}">
+                            <button type="button" class="btn btn-info">Editer</button>
+                        </a>
+
+
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

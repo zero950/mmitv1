@@ -1,0 +1,149 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    {{ parent() }}- BackOffice
+{% endblock %}
+
+
+{% block body %}
+    {#{{ parent() }}#}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#accordian h3").click(function () {
+                //slide up all the link lists
+                $("#accordian ul ul").slideUp();
+                //slide down the link list below the h3 clicked - only if its closed
+                if (!$(this).next().is(":visible")) {
+                    $(this).next().slideDown();
+                }
+            })
+        })
+    </script>
+
+    <div class="container-fluid">
+
+        {% block container %}
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ path('mmi_mmitv_admin') }}">ACCUEIL</a></li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">GESTION <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ path('mmi_mmitv_videos') }}">VIDEOS</a></li>
+                                <li><a href="{{ path('mmi_mmitv_playlist') }}">PLAYLISTS</a></li>
+                                <li><a href="{{ path('mmi_mmitv_programme') }}">PROGRAMMES</a></li>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <li class="divider"></li>
+                                    <li><a href="{{ path('mmi_mmitv_gestionuser') }}">UTILISATEURS</a></li>
+                                {% endif %}
+                            </ul>
+                        </li>
+
+                        <li><a href="{{ path('mmi_mmitv_doc') }}">DOCUMENTATION &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">{{ app.user.username|upper }}<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ path('mmi_mmitv_profil') }}">PROFIL</a></li>
+                                {% if is_granted('ROLE_REDAC') %}
+                                    <li><a href="{{ path("fos_user_security_logout") }}">DECONNEXION</a></li>
+                                {% endif %}
+                            </ul>
+                        </li>
+
+                        {#<li><a href="#"> <img src="{{ asset("bundles/qdback/images/logo.png") }}" alt="Logo" class="img-responsive"/></a></li>#}
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+
+            {#<nav class="navbar navbar-default">#}
+            {#<div class="container-fluid">#}
+            {#<!-- Brand and toggle get grouped for better mobile display -->#}
+            {#<div class="navbar-header">#}
+            {#<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"#}
+            {#data-target="#bs-example-navbar-collapse-1">#}
+            {#<span class="sr-only">Toggle navigation</span>#}
+            {#<span class="icon-bar"></span>#}
+            {#<span class="icon-bar"></span>#}
+            {#<span class="icon-bar"></span>#}
+            {#</button>#}
+            {#<a class="navbar-brand" href="#">MMI - TV</a>#}
+            {#</div>#}
+
+
+            {#<!-- Collect the nav links, forms, and other content for toggling -->#}
+            {#<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">#}
+            {#<ul class="nav navbar-nav">#}
+
+            {#<li><a href="{{ path('mmi_mmitv_admin') }}">Accueil</a></li>#}
+
+            {#</ul>#}
+
+            {#<ul class="nav navbar-nav">#}
+
+            {#<li><a href="{{ path('mmi_mmitv_profil') }}">Profil</a></li>#}
+
+            {#</ul>#}
+
+
+
+            {#{% if is_granted('ROLE_ADMIN') %}#}
+            {#<ul class="nav navbar-nav">#}
+
+            {#<li><a href="{{ path('mmi_mmitv_gestionuser') }}">Gestion Utilisateur</a></li>#}
+
+            {#</ul>#}
+            {#{% endif %}#}
+
+            {#<ul class="nav navbar-nav">#}
+
+            {#<li><a href="{{ path('mmi_mmitv_interface') }}">Interface</a></li>#}
+
+            {#</ul>#}
+
+            {#<ul class="nav navbar-nav">#}
+            {#<li class="dropdown">#}
+            {#<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"#}
+            {#aria-expanded="false">Gestion TV <span class="caret"></span></a>#}
+            {#<ul class="dropdown-menu" role="menu">#}
+            {#<li><a href="{{ path('mmi_mmitv_videos') }}">Vidéos</a></li>#}
+            {#<li><a href="{{ path('mmi_mmitv_playlist') }}">Playlist</a></li>#}
+            {#<li><a href="{{ path('mmi_mmitv_programme') }}">Programmes</a></li>#}
+
+            {#</ul>#}
+            {#</li>#}
+            {#</ul>#}
+
+            {#<ul class="nav navbar-nav">#}
+
+            {#<li><a href="{{ path('mmi_mmitv_doc') }}">Documentation</a></li>#}
+
+            {#</ul>#}
+
+
+            {#{% if is_granted('ROLE_REDAC') %}#}
+            {#<ul class="nav navbar-nav">#}
+
+            {#<li><a href="{{ path("fos_user_security_logout") }}">Déconnexion</a></li>#}
+
+            {#</ul>#}
+            {#{% endif %}#}
+            {#</div>#}
+            {#<!-- /.navbar-collapse -->#}
+            {#</div>#}
+            {#<!-- /.container-fluid -->#}
+            {#</nav>#}
+
+
+
+        {% endblock %}
+
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "MmiMmitvBundle::layoutMmiMmitvBundle.html.twig" %}
+
+{% block container %}
+
+    {{ parent() }}
+
+    <h1> Utilisateur : {{ entity.username }} </h1>
+
+
+
+    <ul class="list-group col-md-4 col-md-offset-2">
+        <li class="list-group-item">ID : {{ entity.id }}</li>
+        <li class="list-group-item">Nom d'utilisateur : {{ entity.username }}</li>
+        <li class="list-group-item">Email : {{ entity.email }}</li>
+        <li class="list-group-item">Le compte expire le : {{ entity.expiresAt|date("d/m/Y") }}</li>
+        <li class="list-group-item">Type de compte :
+                {% for role in entity.roles %}
+                    {{ role [5:]~" - " }}
+                {% endfor %}
+        </li>
+    </ul>
+
+
+
+    <div class="list-group col-md-4">
+        <a href="{{ path('user') }}" class="list-group-item ">Retour à la liste des utilisateurs</a>
+        <a href="{{ path('user_edit', { 'id': entity.id }) }}" class="list-group-item list-group-item-warning">Modifier l'utilisateur</a>
+        <a href="{{ path("user_delete", {'id': entity.id }) }}" class="list-group-item list-group-item-danger">Supprimer l'utilisateur</a>
+    </div>
+
+{% endblock %}

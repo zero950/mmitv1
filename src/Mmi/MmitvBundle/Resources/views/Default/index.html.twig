@@ -1,1 +1,27 @@
-Hello {{ name }}!
+{% extends "MmiMmitvBundle::layoutMmiMmitvBundle.html.twig" %}
+
+{% block title %}
+
+    {{ parent() }}- Index
+
+{% endblock %}
+
+{% block container %}
+    {#<div class="well col-md-4 col-md-offset-4">#}
+        {#<p>TV</p>#}
+    {#</div>#}
+
+<body>
+
+<div class="tv">
+    <div class="vidWrapper">
+        {#<iframe width="100%" height="100%" src="https://www.youtube.com/embed/rYOEfj3zJxw" autoplay frameborder="0" allowfullscreen class="vidtv" ></iframe>#}
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rYOEfj3zJxw?autoplay=1"  frameborder="0" allowfullscreen class=vidtv"></iframe>
+        <img src="{{ asset('bundles/mmimmitv/images/logo.png') }}" alt="Logo" class="logo" />
+
+        <div id="synthe"></div>
+
+    </div>
+
+</div>
+{% endblock %}

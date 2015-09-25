@@ -1,3 +1,31 @@
 mmi_mmitv_homepage:
     path:     /
     defaults: { _controller: MmiMmitvBundle:Default:index }
+
+mmi_mmitv_user:
+    resource: "@MmiMmitvBundle/Resources/config/routing/user.yml"
+    prefix:   /admin/user
+
+mmi_mmitv_admin:
+    path:     /admin
+    defaults: { _controller: MmiMmitvBundle:MmiAdmin:admin }
+
+mmi_mmitv_userform:
+    path:     /ajout_utilisateur
+    defaults: { _controller: MmiMmitvBundle:MmiGestionuser:add }
+
+mmi_mmitv_gestionuser:
+    path:     /admin/gestionuser
+    defaults: { _controller: MmiMmitvBundle:MmiGestionuser:gestionuser }
+
+mmi_mmitv_adduser:
+    path:    /register
+    defaults: { _controller: MmiMmitvBundle:Registration:register }
+
+mmi_mmitv_profil:
+    path:    /admin/profil
+    defaults: { _controller: MmiMmitvBundle:Profile:show}
+
+mmi_mmitv_edit_profil:
+    path:    /admin/edition_profil
+    defaults: { _controller: MmiMmitvBundle:Profile:edit }

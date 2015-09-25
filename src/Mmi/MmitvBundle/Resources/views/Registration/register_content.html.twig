@@ -1,0 +1,59 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<h1>Nouvel Utilisateur</h1>
+
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST"
+      class="fos_user_registration_register">
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-2">
+            <div class="form-group">
+                {{ form_start(form) }}
+                {{ form_errors(form) }}
+                <div class="form-group">
+                    {{ form_widget(form.username, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Email'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control', 'placeholder': 'Mot de passe'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control', 'placeholder': 'Vérification du mot de passe'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_widget(form.Role, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="row">
+                    <div class='col-md-8'>
+                        {{ form_widget(form.expiresAt, {'attr': {'id':'datetimepicker4'}}) }}
+                    </div>
+                    {#<script type="text/javascript">#}
+                    {#$(function () {#}
+                    {#$('#datetimepicker4').datetimepicker();#}
+                    {#});#}
+                    {#</script>#}
+                </div>
+            </div>
+
+            {#{{ form_widget(form.submit, {'attr': {'class': 'btn primary-btn'}}) }}#}
+            {{ form_end(form) }}
+        </div>
+
+
+        <div>
+            <input type="submit" class="btn btn-default" value="{{ 'registration.submit'|trans }}"/>
+        </div>
+
+        <div>
+            <a href="{{ path("mmi_mmitv_admin") }}">
+                <button type="button" class="btn btn-primary">Retour</button>
+            </a>
+        </div>
+    </div>
+
+</form>
